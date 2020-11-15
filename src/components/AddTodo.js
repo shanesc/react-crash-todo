@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AddTodo extends Component {
   state = {
-    title: ''
-  }
+    title: '',
+  };
 
   onChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   onSubmit = (e) => {
     e.preventDefault();
     this.props.addTodo(this.state);
     this.setState(defaultState);
-  }
+  };
 
   render() {
     return (
@@ -40,7 +41,12 @@ class AddTodo extends Component {
 }
 
 const defaultState = {
-  title: ''
-}
+  title: '',
+};
+
+// PropTypes
+AddTodo.propTypes = {
+  addTodo: PropTypes.func.isRequired,
+};
 
 export default AddTodo;
