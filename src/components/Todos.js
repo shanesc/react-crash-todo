@@ -10,7 +10,8 @@ class Todos extends React.Component {
         <TodoItem
           key={todo.id}
           todo={todo}
-          markComplete={this.props.markComplete}
+          toggleComplete={this.props.toggleComplete}
+          delTodo={this.props.delTodo}
         />
       );
     });
